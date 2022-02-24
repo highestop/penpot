@@ -7,9 +7,7 @@
 (ns app.main.ui.shapes.rect
   (:require
    [app.common.geom.shapes :as gsh]
-   [app.main.ui.context :as muc]
    [app.main.ui.shapes.attrs :as attrs]
-   [app.main.ui.shapes.custom-stroke :as cs]
    [app.main.ui.shapes.custom-stroke :refer [shape-custom-strokes]]
    [app.util.object :as obj]
    [rumext.alpha :as mf]))

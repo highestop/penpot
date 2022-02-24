@@ -255,7 +255,7 @@
   [ids stroke]
   (ptk/reify ::add-stroke
     ptk/WatchEvent
-    (watch [_ state _]
+    (watch [_ _ _]
       (let [add (fn [shape attrs] (assoc shape :strokes (into [attrs] (:strokes shape))))]
         (rx/of (dch/update-shapes
                 ids
@@ -265,7 +265,7 @@
   [ids position]
   (ptk/reify ::remove-stroke
     ptk/WatchEvent
-    (watch [_ state _]
+    (watch [_ _ _]
       (let [remove-fill-by-index (fn [values index] (->> (d/enumerate values)
                                                          (filterv (fn [[idx _]] (not= idx index)))
                                                          (mapv second)))
@@ -279,7 +279,7 @@
   [ids]
   (ptk/reify ::remove-all-strokes
     ptk/WatchEvent
-    (watch [_ state _]
+    (watch [_ _ _]
       (let [remove-all (fn [shape] (assoc shape :strokes []))]
         (rx/of (dch/update-shapes
                 ids
